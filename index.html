@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="포나인 9999 - 프리미엄 명품 거래 전문 매장. 신뢰와 전문성으로 최고의 명품 거래 경험을 제공합니다.">
+<meta name="keywords" content="포나인, 9999, 명품, 중고명품, 럭셔리, 명품거래, 명품매입">
+<meta property="og:title" content="포나인 9999 | 프리미엄 명품 거래 전문">
+<meta property="og:description" content="신뢰와 전문성으로 최고의 명품 거래 경험을 제공합니다.">
+<meta property="og:type" content="website">
+<title>포나인 9999 | 프리미엄 명품 거래 전문</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Serif+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#C9A84C;--gold-l:#E8C97A;--gold-d:#9A7A30;
+  --gd:#0D3325;--gm:#1A4D38;--cream:#F5EDD8;
+  --tr:all 0.38s cubic-bezier(.25,.46,.45,.94);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--gd);color:var(--cream);font-family:'Noto Serif KR',serif;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9990;opacity:.28;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E")}
+
+/* TOPBAR */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:500;height:54px;
+  display:flex;align-items:center;justify-content:center;padding:0 32px;
+  background:rgba(13,51,37,.97);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(201,168,76,.2)}
+.lang-toggle{display:flex}
+.lbtn{background:none;border:1px solid rgba(201,168,76,.35);color:var(--gold-l);
+  font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.15em;
+  padding:5px 13px;cursor:pointer;transition:var(--tr);text-transform:uppercase;line-height:1}
+.lbtn:first-child{border-right:none;border-radius:2px 0 0 2px}
+.lbtn:last-child{border-radius:0 2px 2px 0}
+.lbtn.on{background:var(--gold);color:var(--gd);border-color:var(--gold);font-weight:700}
+.lbtn:hover:not(.on){border-color:var(--gold);color:var(--gold)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;position:relative;padding:110px 40px 70px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(26,77,56,.6) 0%,transparent 70%),
+             radial-gradient(ellipse 40% 40% at 15% 85%,rgba(201,168,76,.04) 0%,transparent 60%)}
+.hlogo{position:relative;z-index:1;animation:fup 1.2s ease both;display:flex;justify-content:center;align-items:center}
+.hlogo img{width:min(320px,66vw);filter:drop-shadow(0 8px 30px rgba(201,168,76,.28));display:block;margin:0 auto}
+.htag{position:relative;z-index:1;font-family:'Cormorant Garamond',serif;
+  font-size:clamp(12px,1.8vw,15px);letter-spacing:.35em;color:var(--gold-l);
+  text-transform:uppercase;margin-top:28px;opacity:0;animation:fup 1.2s ease .4s both}
+.hh1{position:relative;z-index:1;font-family:'Cormorant Garamond',serif;
+  font-size:clamp(30px,5.5vw,68px);font-weight:300;color:var(--cream);
+  line-height:1.15;margin-top:14px;opacity:0;animation:fup 1.2s ease .6s both}
+.hdesc{position:relative;z-index:1;font-size:clamp(13px,1.4vw,15px);
+  color:rgba(245,237,216,.65);line-height:1.95;max-width:500px;
+  margin:14px auto 0;opacity:0;animation:fup 1.2s ease .8s both;word-break:keep-all}
+.hdiv{display:flex;align-items:center;gap:14px;margin:36px auto 0;width:240px;
+  position:relative;z-index:1;opacity:0;animation:fup 1.2s ease 1s both}
+.hdiv span{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold-d))}
+.hdiv span:last-child{background:linear-gradient(90deg,var(--gold-d),transparent)}
+.hdiv i{color:var(--gold);font-style:normal;font-size:11px}
+.hbtns{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:13px;
+  justify-content:center;margin-top:36px;opacity:0;animation:fup 1.2s ease 1.2s both}
+
+/* BUTTONS */
+.bg{display:inline-flex;align-items:center;gap:9px;
+  background:linear-gradient(135deg,var(--gold-d),var(--gold),var(--gold-l));
+  color:var(--gd);font-family:'Noto Serif KR',serif;font-size:14px;font-weight:700;
+  letter-spacing:.07em;padding:15px 30px;border:none;cursor:pointer;
+  transition:var(--tr);text-decoration:none;position:relative;overflow:hidden}
+.bg::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,var(--gold-l),var(--gold));opacity:0;transition:var(--tr)}
+.bg:hover::after{opacity:1}
+.bg:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,.35)}
+.bg span{position:relative;z-index:1}
+.bl{display:inline-flex;align-items:center;gap:9px;
+  background:linear-gradient(135deg,var(--gold-d),var(--gold),var(--gold-l));
+  color:var(--gd);font-family:'Noto Serif KR',serif;font-size:14px;font-weight:700;
+  letter-spacing:.07em;padding:15px 30px;border:none;cursor:pointer;
+  transition:var(--tr);text-decoration:none;position:relative;overflow:hidden}
+.bl::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,var(--gold-l),var(--gold));opacity:0;transition:var(--tr)}
+.bl:hover::after{opacity:1}
+.bl:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,.35)}
+.bl span,.bl>*:not(span){position:relative;z-index:1}
+
+/* INFO STRIP */
+.strip{background:var(--gm);border-top:1px solid rgba(201,168,76,.2);
+  border-bottom:1px solid rgba(201,168,76,.2);
+  padding:24px 40px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:40px}
+.sitem{display:flex;align-items:center;gap:13px}
+.sico{width:42px;height:42px;border:1px solid rgba(201,168,76,.38);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.slbl{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--gold-d);display:block}
+.sval{font-size:14px;color:var(--cream);font-weight:500;display:block;margin-top:3px}
+a.sval{text-decoration:none;transition:color .2s}
+a.sval:hover{color:var(--gold-l)}
+
+/* SECTIONS */
+.sec{padding:90px 40px;max-width:1200px;margin:0 auto}
+.shd{text-align:center;margin-bottom:58px}
+.seye{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.35em;
+  text-transform:uppercase;color:var(--gold);display:block;margin-bottom:13px}
+.stit{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.8vw,46px);
+  font-weight:400;color:var(--cream);line-height:1.2;font-style:italic}
+.sline{display:flex;align-items:center;gap:13px;margin:15px auto 0;width:160px}
+.sline span{flex:1;height:1px;background:rgba(201,168,76,.35)}
+.sline i{color:var(--gold);font-style:normal;font-size:10px}
+
+/* STORY */
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.stxt p{font-size:15px;line-height:1.95;color:rgba(245,237,216,.8);margin-bottom:18px;word-break:keep-all}
+.stxt p strong{color:var(--gold-l);font-weight:600}
+.svis{position:relative;aspect-ratio:3/4;max-height:500px;background:var(--gm);
+  border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;
+  justify-content:center;overflow:hidden}
+.svis::before{content:'';position:absolute;inset:12px;border:1px solid rgba(201,168,76,.1);pointer-events:none;z-index:1}
+.svis img{width:100%;height:100%;object-fit:contain;object-position:center center;filter:drop-shadow(0 4px 24px rgba(201,168,76,.18));display:block}
+
+/* VALUES */
+.vbg{background:var(--gm);border-top:1px solid rgba(201,168,76,.15);border-bottom:1px solid rgba(201,168,76,.15)}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,.1)}
+.vc{background:var(--gm);padding:50px 32px;text-align:center;transition:var(--tr);position:relative;overflow:hidden}
+.vc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  transform:scaleX(0);transition:var(--tr)}
+.vc:hover{background:rgba(26,77,56,.85)}
+.vc:hover::after{transform:scaleX(1)}
+.vnum{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;
+  color:rgba(201,168,76,.1);line-height:1;margin-bottom:16px;font-style:italic}
+.vttl{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold-l);margin-bottom:11px}
+.vdsc{font-size:13px;line-height:1.85;color:rgba(245,237,216,.65);word-break:keep-all}
+
+/* CHANNELS */
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.cc{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:13px;padding:34px 14px;border:1px solid rgba(201,168,76,.2);
+  background:rgba(26,77,56,.3);text-decoration:none;color:var(--cream);
+  transition:var(--tr);text-align:center;cursor:pointer}
+.cc:hover{border-color:var(--gold);background:rgba(26,77,56,.7);
+  transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.28)}
+.cico{width:52px;height:52px;border:1px solid rgba(201,168,76,.4);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--gold);transition:var(--tr)}
+.cc:hover .cico{background:var(--gold);color:var(--gd);border-color:var(--gold)}
+.cnm{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.03em}
+.csb{font-size:11px;letter-spacing:.1em;color:rgba(245,237,216,.4);text-transform:uppercase}
+
+/* MAP */
+.msec{background:var(--gm);border-top:1px solid rgba(201,168,76,.15);border-bottom:1px solid rgba(201,168,76,.15)}
+.minner{display:grid;grid-template-columns:1fr 1fr;max-width:1200px;margin:0 auto}
+.minfo{padding:76px 56px;display:flex;flex-direction:column;justify-content:center;gap:26px}
+.mvis{background:var(--gd);border-left:1px solid rgba(201,168,76,.15);min-height:420px;
+  display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.mvis img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:.9}
+.mph{text-align:center;color:rgba(201,168,76,.32);position:relative;z-index:1}
+.mph svg{width:44px;height:44px;stroke:currentColor;fill:none;margin-bottom:10px;display:block;margin-left:auto;margin-right:auto}
+.mph p{font-size:12px;line-height:1.7;word-break:keep-all}
+.albl{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-d)}
+.aval{font-size:15px;color:var(--cream);line-height:1.7;word-break:keep-all;margin-top:5px}
+.mbtns{display:flex;flex-direction:column;gap:11px}
+
+/* FOOTER */
+footer{background:#060E0A;border-top:1px solid rgba(201,168,76,.15);padding:58px 40px 28px;text-align:center}
+.flogo img{width:120px;opacity:.62;margin-bottom:22px;display:block;margin-left:auto;margin-right:auto}
+.flinks{display:flex;justify-content:center;gap:26px;margin-bottom:20px;flex-wrap:wrap}
+.flinks a{font-size:12px;letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(245,237,216,.3);text-decoration:none;transition:color .2s}
+.flinks a:hover{color:var(--gold)}
+.fcopy{font-size:11px;color:rgba(245,237,216,.17);letter-spacing:.04em}
+
+/* MODAL */
+.ov{position:fixed;inset:0;background:rgba(6,14,10,.93);z-index:10000;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(12px)}
+.ov.open{opacity:1;pointer-events:all}
+.modal{background:var(--gm);border:1px solid rgba(201,168,76,.3);padding:46px 42px;
+  width:90%;max-width:420px;position:relative;transform:translateY(16px);transition:transform .3s}
+.ov.open .modal{transform:translateY(0)}
+.mx{position:absolute;top:13px;right:15px;background:none;border:none;
+  color:rgba(245,237,216,.36);font-size:18px;cursor:pointer;transition:color .2s}
+.mx:hover{color:var(--gold)}
+.modal h2{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold-l);margin-bottom:6px}
+.modal p{font-size:13px;color:rgba(245,237,216,.5);margin-bottom:22px;line-height:1.6}
+.modal input{width:100%;background:rgba(13,51,37,.8);border:1px solid rgba(201,168,76,.28);
+  color:var(--cream);font-family:'Noto Serif KR',serif;font-size:15px;
+  padding:13px 17px;outline:none;transition:border-color .2s;margin-bottom:11px;letter-spacing:.2em}
+.modal input:focus{border-color:var(--gold)}
+.merr{font-size:12px;color:#e07070;margin-bottom:11px;display:none}
+
+/* ADMIN */
+
+/* ANIMATIONS */
+@keyframes fup{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .sgrid,.minner{grid-template-columns:1fr}
+  .vgrid{grid-template-columns:1fr}
+  .cgrid{grid-template-columns:repeat(3,1fr)}
+  .minfo{padding:46px 26px}
+  .mvis{border-left:none;border-top:1px solid rgba(201,168,76,.15);min-height:260px}
+  }
+@media(max-width:600px){
+  .topbar{padding:0 14px}
+  .sec{padding:58px 18px}
+  .strip{gap:18px;padding:18px}
+  .modal{padding:28px 18px}
+      .minfo{padding:40px 18px}
+  .cgrid{gap:9px}
+  .cc{padding:22px 8px;gap:8px}
+  .cico{width:40px;height:40px;font-size:18px}
+  .cnm{font-size:13px}
+  .csb{font-size:10px}
+  .hbtns{gap:10px}
+  .bg,.bl{padding:13px 20px;font-size:13px}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ TOPBAR ══ -->
+<div class="topbar">
+  <div class="lang-toggle">
+    <button class="lbtn on" id="bko" onclick="setLang('ko')">KR</button>
+    <button class="lbtn" id="ben" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <!-- KO -->
+  <div id="ko-hero">
+    <div class="hlogo"><img id="img-logo-ko" src="logo.png" alt="포나인 9999 로고"></div>
+    <p class="htag" id="ko-tag">프리미엄 명품 거래 전문</p>
+    <h1 class="hh1" id="ko-h1">진정한 가치를<br>아는 사람들을 위해</h1>
+    <p class="hdesc" id="ko-desc">포나인은 최고의 명품을 가장 신뢰할 수 있는 방법으로 거래합니다.<br>전문성과 진정성을 바탕으로 당신의 명품 경험을 완성합니다.</p>
+    <div class="hdiv"><span></span><i>◆</i><span></span></div>
+    <div class="hbtns">
+      <a id="ko-cta-tel" href="tel:01049180714" class="bg"><span>전화상담</span></a>
+      <a href="#ko-map" class="bl">위치안내</a>
+    </div>
+  </div>
+  <!-- EN -->
+  <div id="en-hero" style="display:none">
+    <div class="hlogo"><img id="img-logo-en" src="logo.png" alt="FORNINE 9999 Logo"></div>
+    <p class="htag" id="en-tag">Premium Luxury Trading Specialist</p>
+    <h1 class="hh1" id="en-h1">For Those Who<br>Know True Value</h1>
+    <p class="hdesc" id="en-desc">포나인 specializes in authentic luxury trading with unrivaled expertise and integrity.<br>We complete your luxury experience with trust and professionalism.</p>
+    <div class="hdiv"><span></span><i>◆</i><span></span></div>
+    <div class="hbtns">
+      <a id="en-cta-tel" href="tel:01049180714" class="bg"><span>Call Us · 010-4918-0714</span></a>
+      <a href="#en-map" class="bl">Find Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INFO STRIP ══ -->
+<div id="ko-strip">
+  <div class="strip">
+    <div class="sitem"><div class="sico">📞</div>
+      <div><span class="slbl">전화문의</span><a class="sval" id="ko-s-tel" href="tel:01049180714">010-4918-0714</a></div></div>
+    <div class="sitem"><div class="sico">🕐</div>
+      <div><span class="slbl">운영시간</span><span class="sval" id="ko-s-hours">11:00 – 18:00 (연중무휴)</span></div></div>
+    <div class="sitem"><div class="sico">📍</div>
+      <div><span class="slbl">주소</span><span class="sval" id="ko-s-addr">서울특별시 동대문구 청계천로 417</span></div></div>
+  </div>
+</div>
+<div id="en-strip" style="display:none">
+  <div class="strip">
+    <div class="sitem"><div class="sico">📍</div>
+      <div><span class="slbl">Address</span><span class="sval" id="en-s-addr">417 Cheonggyecheon-ro, Dongdaemun-gu, 1F, Four-Nine</span></div></div>
+    <div class="sitem"><div class="sico">📞</div>
+      <div><span class="slbl">Phone</span><a class="sval" id="en-s-tel" href="tel:01049180714">010-4918-0714</a></div></div>
+    <div class="sitem"><div class="sico">🕐</div>
+      <div><span class="slbl">Hours</span><span class="sval" id="en-s-hours">11:00 – 18:00</span></div></div>
+  </div>
+</div>
+
+<!-- ══ STORY ══ -->
+<div id="ko-story">
+  <section class="sec">
+    <div class="shd">
+      <span class="seye">브랜드 스토리</span>
+      <h2 class="stit" id="ko-stit">숫자 너머의 이야기</h2>
+      <div class="sline"><span></span><i>◆</i><span></span></div>
+    </div>
+    <div class="sgrid">
+      <div class="stxt">
+        <p id="ko-sp1"><strong>포나인(9999)</strong>은 순도의 극한을 상징합니다. 금의 순도 99.99%처럼, 저희는 거래의 모든 순간에 타협 없는 순수함과 완벽함을 추구합니다.</p>
+        <p id="ko-sp2">명품은 단순한 소유가 아닙니다. 그것은 <strong>삶의 철학이자 시간이 증명하는 가치</strong>입니다. 포나인은 그 가치를 가장 올바르게 이어주는 다리가 되겠습니다.</p>
+        <p id="ko-sp3">저희의 전문 감정사는 수년간의 경험을 바탕으로 모든 제품을 철저히 감정합니다. 고객의 신뢰를 최우선으로 삼아, 투명하고 공정한 거래 환경을 만들어갑니다.</p>
+      </div>
+      <div class="svis"><img id="img-story" src="logo.png" alt="스토리 이미지" style="width:80%"></div>
+    </div>
+  </section>
+</div>
+<div id="en-story" style="display:none">
+  <section class="sec">
+    <div class="shd">
+      <span class="seye">Brand Story</span>
+      <h2 class="stit" id="en-stit">A Story Beyond Numbers</h2>
+      <div class="sline"><span></span><i>◆</i><span></span></div>
+    </div>
+    <div class="sgrid">
+      <div class="stxt">
+        <p id="en-sp1"><strong>FORNINE (9999)</strong> symbolizes the ultimate in purity. Like 99.99% fine gold, we pursue uncompromising authenticity and perfection in every transaction.</p>
+        <p id="en-sp2">Luxury is not mere possession. It is a <strong>philosophy of life and a value proven by time</strong>. 포나인 serves as the most authentic bridge to carry that value forward.</p>
+        <p id="en-sp3">Our expert appraisers authenticate every item with years of experience, placing customer trust above all else to build a transparent and fair trading environment.</p>
+      </div>
+      <div class="svis"><img id="img-story-en" src="logo.png" alt="Story Image" style="width:80%"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ VALUES ══ -->
+<div id="ko-values" class="vbg">
+  <section class="sec">
+    <div class="shd"><span class="seye">핵심 가치</span>
+      <h2 class="stit" id="ko-vtit">포나인이 약속하는 것</h2>
+      <div class="sline"><span></span><i>◆</i><span></span></div></div>
+    <div class="vgrid">
+      <div class="vc"><div class="vnum">01</div><div class="vttl" id="ko-v1t">진품 보증</div><div class="vdsc" id="ko-v1d">모든 제품은 전문 감정사의 엄격한 진품 감정을 거칩니다. 거짓 없는 거래가 저희의 근본입니다.</div></div>
+      <div class="vc"><div class="vnum">02</div><div class="vttl" id="ko-v2t">투명한 가격</div><div class="vdsc" id="ko-v2d">합리적이고 투명한 가격 책정으로 매도인과 매수인 모두가 만족할 수 있는 거래를 만듭니다.</div></div>
+      <div class="vc"><div class="vnum">03</div><div class="vttl" id="ko-v3t">전문 서비스</div><div class="vdsc" id="ko-v3d">풍부한 경험과 깊은 전문 지식으로 고객 한 분 한 분께 맞춤화된 최고의 서비스를 제공합니다.</div></div>
+    </div>
+  </section>
+</div>
+<div id="en-values" class="vbg" style="display:none">
+  <section class="sec">
+    <div class="shd"><span class="seye">Our Values</span>
+      <h2 class="stit" id="en-vtit">What FORNINE Promises</h2>
+      <div class="sline"><span></span><i>◆</i><span></span></div></div>
+    <div class="vgrid">
+      <div class="vc"><div class="vnum">01</div><div class="vttl" id="en-v1t">Authenticity</div><div class="vdsc" id="en-v1d">Every item undergoes rigorous authentication by expert appraisers. Honest dealings are our foundation.</div></div>
+      <div class="vc"><div class="vnum">02</div><div class="vttl" id="en-v2t">Transparent Pricing</div><div class="vdsc" id="en-v2d">Fair and transparent pricing ensures satisfaction for both buyers and sellers in every transaction.</div></div>
+      <div class="vc"><div class="vnum">03</div><div class="vttl" id="en-v3t">Expert Service</div><div class="vdsc" id="en-v3d">Rich experience and deep expertise allow us to deliver personalized, world-class service to every client.</div></div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ CHANNELS (동적 렌더링) ══ -->
+<div id="ko-ch">
+  <section class="sec">
+    <div class="shd"><span class="seye">공식 채널</span>
+      <h2 class="stit" id="ko-chtit">어디서든 포나인을 만나보세요</h2>
+      <div class="sline"><span></span><i>◆</i><span></span></div></div>
+    <div class="cgrid" id="ko-ch-grid"></div>
+  </section>
+</div>
+<div id="en-ch" style="display:none">
+  <section class="sec">
+    <div class="shd"><span class="seye">Official Channels</span>
+      <h2 class="stit" id="en-chtit">Connect with FORNINE</h2>
+      <div class="sline"><span></span><i>◆</i><span></span></div></div>
+    <div class="cgrid" id="en-ch-grid"></div>
+  </section>
+</div>
+
+<!-- ══ MAP ══ -->
+<div id="ko-map" class="msec">
+  <div class="minner">
+    <div class="minfo">
+      <div><span class="seye">오시는 길</span>
+        <h2 class="stit" style="text-align:left;font-size:clamp(22px,3vw,36px);margin-top:8px">포나인 9999</h2></div>
+      <div><div class="albl">주소</div><div class="aval" id="ko-addr">서울특별시 동대문구 청계천로 417<br>포나인 1층</div></div>
+      <div><div class="albl">전화</div><div class="aval"><a id="ko-tel-a" href="tel:01049180714" style="color:var(--cream);text-decoration:none">010-4918-0714</a></div></div>
+      <div><div class="albl">운영시간</div><div class="aval" id="ko-hours">11:00 – 18:00<br>주말 · 공휴일 정상영업<br>(상담예약시  영업시간 외 오픈가능)</div></div>
+      <div class="mbtns">
+        <a id="ko-map-btn" href="https://map.naver.com/p/entry/place/1056854813?placePath=%2Fhome" target="_blank" class="bg"><span>네이버 지도 안내</span></a>
+        <a id="ko-tel-btn2" href="tel:01049180714" class="bl">전화 문의 · 010-4918-0714</a>
+      </div>
+    </div>
+    <div class="mvis" id="mvis-ko" style="position:relative">
+      <img src="map.png" alt="지도" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:block">
+    </div>
+  </div>
+</div>
+<div id="en-map" class="msec" style="display:none">
+  <div class="minner">
+    <div class="minfo">
+      <div><span class="seye">Find Us</span>
+        <h2 class="stit" style="text-align:left;font-size:clamp(22px,3vw,36px);margin-top:8px">FORNINE 9999</h2></div>
+      <div><div class="albl">Address</div><div class="aval" id="en-addr">1F, ForNine Building<br>000 Apgujeong-ro, Gangnam-gu, Seoul</div></div>
+      <div><div class="albl">Phone</div><div class="aval"><a id="en-tel-a" href="tel:01049180714" style="color:var(--cream);text-decoration:none">010-4918-0714</a></div></div>
+      <div><div class="albl">Hours</div><div class="aval" id="en-hours">11:00 – 18:00<br>Open on Sundays and public holidays<br>*Open outside business hours for consultation appointments</div></div>
+      <div class="mbtns">
+        <a id="en-map-btn" href="https://map.naver.com/p/entry/place/1056854813?placePath=%2Fhome" target="_blank" class="bg"><span>Open in Naver Maps</span></a>
+        <a id="en-tel-btn2" href="tel:01049180714" class="bl">Call Us · 010-4918-0714</a>
+      </div>
+    </div>
+    <div class="mvis" id="mvis-en" style="position:relative">
+      <img src="map.png" alt="Map" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:block">
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="flogo"><img id="img-footer" src="logo.png" alt="포나인 9999"></div>
+  <div class="flinks" id="fko">
+    <a href="#ko-story">브랜드 스토리</a>
+    <a href="#ko-ch">공식 채널</a>
+    <a href="#ko-map">오시는 길</a>
+    <a href="tel:01049180714">📞 문의하기</a>
+  </div>
+  <div class="flinks" id="fen" style="display:none">
+    <a href="#en-story">Brand Story</a>
+    <a href="#en-ch">Channels</a>
+    <a href="#en-map">Find Us</a>
+    <a href="tel:01049180714">📞 Contact</a>
+  </div>
+  <p class="fcopy" id="ko-copy">© 2026 포나인 9999. 모든 권리 보유.</p>
+  <p class="fcopy" id="en-copy" style="display:none">© 2026 포나인 9999. All rights reserved.</p>
+</footer>
+
+<script>
+/* ── LANG ── */
+const KO=['ko-hero','ko-strip','ko-story','ko-values','ko-ch','ko-map','fko','ko-copy'];
+const EN=['en-hero','en-strip','en-story','en-values','en-ch','en-map','fen','en-copy'];
+function setLang(l){
+  const ko=l==='ko';
+  KO.forEach(id=>{const e=document.getElementById(id);if(e)e.style.display=ko?'':'none'});
+  EN.forEach(id=>{const e=document.getElementById(id);if(e)e.style.display=ko?'none':''});
+  document.getElementById('bko').className='lbtn'+(ko?' on':'');
+  document.getElementById('ben').className='lbtn'+(ko?'':' on');
+  document.documentElement.lang=l;
+}
+
+/* ── CHANNELS ── */
+const channels = [
+  {icon:'💬', name:'카카오 채널', nameEn:'KakaoTalk', subKo:'1:1 문의',     subEn:'Direct Chat',   url:'https://pf.kakao.com/_JMZxdX'},
+  {icon:'▶',  name:'유튜브 채널',nameEn:'YouTube',   subKo:'영상 콘텐츠',  subEn:'Video Content', url:'https://www.youtube.com/@fournine.9999'},
+  {icon:'◉',  name:'인스타그램', nameEn:'Instagram', subKo:'피드 & 스토리',subEn:'Feed & Stories',url:'https://www.instagram.com/4nine9999'},
+];
+
+function renderChGrid(){
+  ['ko-ch-grid','en-ch-grid'].forEach(function(gid){
+    var g=document.getElementById(gid); if(!g) return;
+    var isEn=gid.startsWith('en');
+    g.innerHTML=channels.map(function(c){
+      return '<a class="cc" href="'+c.url+'" target="_blank" rel="noopener noreferrer">'
+        +'<div class="cico">'+c.icon+'</div>'
+        +'<div class="cnm">'+(isEn?c.nameEn:c.name)+'</div>'
+        +'<div class="csb">'+(isEn?c.subEn:c.subKo)+'</div>'
+        +'</a>';
+    }).join('');
+  });
+}
+
+/* ── SCROLL REVEAL ── */
+const obs=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}})},{threshold:.1});
+document.querySelectorAll('.vc,.cc,.sgrid,.minner').forEach(function(el){
+  el.style.opacity='0';el.style.transform='translateY(16px)';
+  el.style.transition='opacity .7s ease,transform .7s ease';obs.observe(el);
+});
+
+/* ── INIT ── */
+document.addEventListener('DOMContentLoaded',function(){
+  renderChGrid();
+});
+</script>
+</body>
+</html>
